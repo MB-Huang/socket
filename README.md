@@ -64,4 +64,4 @@ This code can work on Linux and Windows.
 
 ### Wait Received Data
 
-- If the data with large size like image, you shoyld check the all bytes are recieved when recieve the data from partner. To enable this functionality, please set `SocketPair::waitRecvComplete = true`.
+- If the data with large size like image, you should check the all bytes are recieved when recieve the data from partner. To enable this functionality, please set `SocketPair::waitRecvComplete = true`.
