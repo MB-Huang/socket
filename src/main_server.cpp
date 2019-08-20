@@ -15,7 +15,7 @@ int main()
     server.SendLen = sizeof(message);
     server.RecvLen = 50;
 
-    while(1)
+    while(server.checkConnected())
     {
         server.run();
         printf("Get from client: %s\n", server.RecvBuffer);

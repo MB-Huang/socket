@@ -5,6 +5,12 @@ This code can work on Linux and Windows.
 
 ## Usage
 
+- Step 0. Setup Makefile
+
+    There are arguments in **Makefile**
+    
+    - `VIDEO_STREAM`: set `1` to compile the video server/client, which use opencv to open webcam.
+
 - Step 1. Compile the program
     
     Compile with **Makefile** by using following command in terminal
@@ -18,12 +24,20 @@ This code can work on Linux and Windows.
     ```
     $ ./server.out
     ```
+    or
+    ```
+    $ ./video_server.out
+    ```
 
 - Step 3. Execute the client
 
     Open a client socket to connect server by using following command in terminal
     ```
     $ ./client.out
+    ```
+    or
+    ```
+    $ ./video_client.out
     ```
 
 ## Introduction

@@ -14,12 +14,34 @@ SocketPair::SocketPair(SocketType type) : type(type)
 	sockfd_client = 0;
 	RecvLen = 0;
 	SendLen = 0;
+	RecvBuffer = nullptr;
+	SendBuffer = nullptr;
+	setRecvBuffer(RECV_BUFF_LEN);
+	setSendBuffer(SEND_BUFF_LEN);
 }
 
 SocketPair::~SocketPair()
 {
 	free(this->serverIP);	// release memory
+	free(this->RecvBuffer);
+	free(this->SendBuffer);
+	RecvBuffer = nullptr;	// label as invalid pointer
+	SendBuffer = nullptr;
 	this->closeSocket();
+}
+
+void SocketPair::setRecvBuffer(size_t len)
+{
+	if (RecvBuffer != nullptr)
+		free(this->RecvBuffer);
+	RecvBuffer = (char*)malloc(len);
+}
+
+void SocketPair::setSendBuffer(size_t len)
+{
+	if (SendBuffer != nullptr)
+		free(this->SendBuffer);
+	SendBuffer = (char*)malloc(len);
 }
 
 bool SocketPair::initial(void)

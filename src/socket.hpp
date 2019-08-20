@@ -63,8 +63,8 @@ public:
 	// message buffer parameter
 	unsigned int RecvLen;	// bytes length of recieve data
 	unsigned int SendLen;	// bytes length of send data
-	char RecvBuffer[RECV_BUFF_LEN];		// buffer of recieve data
-	char SendBuffer[SEND_BUFF_LEN];		// buffer of send data
+	char* RecvBuffer;		// buffer of recieve data
+	char* SendBuffer;		// buffer of send data
 	bool waitRecvComplete;	// If true, wait untill the length of received bytes as long as `RecvLen`.
 
 	SocketPair(SocketType type);
@@ -73,6 +73,8 @@ public:
 	// Setup
 	void setServerIP(const char *sIP){strcpy(serverIP, sIP);}
 	void setPortNum(const int &P){this->port=P;}
+	void setRecvBuffer(size_t len);
+	void setSendBuffer(size_t len);
 	bool checkConnected(void){return isConnected;}
 
 	bool initial(void);
