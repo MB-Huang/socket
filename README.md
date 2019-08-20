@@ -39,3 +39,5 @@ This code can work on Linux and Windows.
 - Before send/recieve the data, please setup the data size `SocketPair::SendLen` and `SocketPair::RecvLen`.
 
 ### Wait Received Data
+
+- If the data with large size like image, you shoyld check the all bytes are recieved when recieve the data from partner. To enable this functionality, please set `SocketPair::waitRecvComplete = true`.
