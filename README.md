@@ -14,31 +14,41 @@ This code can work on Linux and Windows.
 - Step 1. Compile the program
     
     Compile with **Makefile** by using following command in terminal
-    ```
+    ```bash
     $ make
     ```
 
 - Step 2. Execute the server
 
-    Open a server socket to wait client come by using following command in terminal
-    ```
-    $ ./server.out
-    ```
-    or
-    ```
-    $ ./video_server.out
-    ```
+    - Open a server socket to wait client come by using following command in terminal
+
+        ```bash
+        $ ./server.out
+        ```
+        or 
+        ```bash
+        $ python server.py
+        ```
+
+    - In image data case, use following instead
+
+        ```bash
+        $ ./video_server.out
+        ```
 
 - Step 3. Execute the client
 
-    Open a client socket to connect server by using following command in terminal
-    ```
-    $ ./client.out
-    ```
-    or
-    ```
-    $ ./video_client.out
-    ```
+    - Open a client socket to connect server by using following command in terminal
+
+        ```bash
+        $ ./client.out
+        ```
+
+    - In image data case, use following instead
+
+        ```bash
+        $ ./video_client.out
+        ```
 
 ## Introduction
 
